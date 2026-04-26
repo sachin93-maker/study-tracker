@@ -182,7 +182,7 @@ const Welcome = () => {
             <img
               alt="Dashboard Preview"
               className="w-full h-auto max-h-[500px] object-contain rounded-lg opacity-80"
-              src="/C:\Users\vijay\.gemini\antigravity\scratch\anti-gravity\frontend\src\assets\oie_26144011PIHbUtiY.png"
+              src="/dashboard-preview.png"
             />
           </div>
         </div>
