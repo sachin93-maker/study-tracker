@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: anti-gravity
+    env: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    branch: main
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "5000"
+      - key: MONGODB_URI
+        value: <YOUR_MONGODB_ATLAS_CONNECTION_STRING>
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CLIENT_URL
+        value: https://anti-gravity.onrender.com
