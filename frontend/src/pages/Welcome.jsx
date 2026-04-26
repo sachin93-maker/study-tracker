@@ -10,8 +10,7 @@ const Welcome = () => {
         </div>
         <div className="hidden lg:flex items-center gap-8">
           <Link className="text-cyan-400 border-b-2 border-cyan-400 pb-1 font-h3 tracking-tight transition-all duration-300" to="/">Home</Link>
-          <a className="text-slate-300 hover:text-cyan-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] transition-all duration-300 font-h3 tracking-tight" href="#">Ecosystem</a>
-          <a className="text-slate-300 hover:text-cyan-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] transition-all duration-300 font-h3 tracking-tight" href="#">Research</a>
+
         </div>
         <Link className="px-5 sm:px-6 py-2 border-2 border-cyan-500 text-cyan-400 rounded-full font-bold scale-100 sm:scale-105 active:scale-95 transition-transform hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] text-sm sm:text-base" to="/auth">
           Log In
@@ -22,7 +21,7 @@ const Welcome = () => {
       <main className="relative pt-32 sm:pt-48 pb-16 sm:pb-24 px-6 sm:px-10 max-w-7xl mx-auto flex flex-col items-center text-center animate-fade-in">
         <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-full sm:w-[800px] h-[400px] sm:h-[800px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none"></div>
         <h1 className="font-h1 text-4xl sm:text-7xl lg:text-[80px] text-white leading-[1.1] tracking-tighter neon-glow mb-6 sm:mb-8 animate-float">
-          Study at Zero-G.<br className="hidden sm:block"/>Lift the Weight of Learning.
+          Study at Zero-G.<br className="hidden sm:block" />Lift the Weight of Learning.
         </h1>
         <p className="max-w-2xl text-sm sm:text-lg font-body-lg text-slate-300 mb-8 sm:mb-12 px-2">
           A student-centric ecosystem designed to automate your productivity. Track sessions, visualize your growth with AI-powered analytics, and master your subjects.
@@ -36,7 +35,7 @@ const Welcome = () => {
         <div className="mt-12 sm:mt-20 w-full relative">
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent z-10"></div>
           <div className="rounded-xl overflow-hidden glass-card p-2 border border-white/5">
-            <img alt="Dashboard Preview" className="w-full h-[250px] sm:h-[400px] object-cover rounded-lg opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdvASAq-rsyv-vE0SHudZsfu2shiKBC_XWo570fIDsbwPOSvDyb0c-rHlVdRnOkEmG0GJ6i5RJmtfICfrD-1gKwwW356cETbOzlpRZiMeDA8LTaDTjZlLlwTdrRq6sPPVwIuLSI_Ff_ymc4q9wQssFCiaI2KYBjpgi43yGfkAU2DH-dFzf9nGb_cbK6ZIUZrruCXQvNNTbT9BDjDd4gTWwhg68rtf1En4jo5eZOxmVpYSFw6CBNzplAj_3pnzSMsTZPHkOj1Lt4dQ"/>
+            <img alt="Dashboard Preview" className="w-full h-[250px] sm:h-[400px] object-cover rounded-lg opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdvASAq-rsyv-vE0SHudZsfu2shiKBC_XWo570fIDsbwPOSvDyb0c-rHlVdRnOkEmG0GJ6i5RJmtfICfrD-1gKwwW356cETbOzlpRZiMeDA8LTaDTjZlLlwTdrRq6sPPVwIuLSI_Ff_ymc4q9wQssFCiaI2KYBjpgi43yGfkAU2DH-dFzf9nGb_cbK6ZIUZrruCXQvNNTbT9BDjDd4gTWwhg68rtf1En4jo5eZOxmVpYSFw6CBNzplAj_3pnzSMsTZPHkOj1Lt4dQ" />
           </div>
         </div>
       </main>
@@ -91,7 +90,7 @@ const Welcome = () => {
         <div className="order-2 md:order-1">
           <div className="relative">
             <div className="absolute -inset-4 bg-cyan-500/20 blur-2xl rounded-full"></div>
-            <img alt="Feature Concept" className="relative w-full aspect-square object-cover rounded-xl border border-white/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw6T0c5Ua0HJsR7y3e3kiphQUePiyr3wgXuUdntF8zAwRYVIRsNbKvvKORxsaBKUM-_LhC11O_JIE_b4uWdQPh_HJkHLOQSIBFIIvFry8BbFr5YkqPrzUCMQpRH66o4OF5xI7r3kecaHzSonxotZ9vZrU005pkEQg5o75cBVkIXms4hjPkjDXQ8Wcoc6fn8oPboG3jDfME4O22T1EzvBY72cXF3UPsRARfRzGoUPIUuSCzTXubQhI2dYq7Jqe_5cfpuCQ9bX-w_-c"/>
+            <img alt="Feature Concept" className="relative w-full aspect-square object-cover rounded-xl border border-white/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw6T0c5Ua0HJsR7y3e3kiphQUePiyr3wgXuUdntF8zAwRYVIRsNbKvvKORxsaBKUM-_LhC11O_JIE_b4uWdQPh_HJkHLOQSIBFIIvFry8BbFr5YkqPrzUCMQpRH66o4OF5xI7r3kecaHzSonxotZ9vZrU005pkEQg5o75cBVkIXms4hjPkjDXQ8Wcoc6fn8oPboG3jDfME4O22T1EzvBY72cXF3UPsRARfRzGoUPIUuSCzTXubQhI2dYq7Jqe_5cfpuCQ9bX-w_-c" />
           </div>
         </div>
         <div className="order-1 md:order-2 flex flex-col gap-4 sm:gap-6">
