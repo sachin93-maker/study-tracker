@@ -28,10 +28,10 @@ app.use((req, res, next) => {
 
 // Routes
 app.get('/', (req, res) => {
-  res.json({ 
-    message: "Welcome to Study Tracker API", 
+  res.json({
+    message: "Welcome to Study Tracker API",
     status: "Running",
-    endpoints: ["/api/health", "/api/auth", "/api/tutor", "/api/analytics"] 
+    endpoints: ["/api/health", "/api/auth", "/api/tutor", "/api/analytics"]
   });
 });
 
@@ -42,16 +42,16 @@ app.get('/api', (req, res) => {
 app.get('/api/test-network', async (req, res) => {
   try {
     const response = await fetch('https://generativelanguage.googleapis.com');
-    res.json({ 
-      status: 'success', 
-      message: 'Can reach Google AI servers', 
-      httpStatus: response.status 
+    res.json({
+      status: 'success',
+      message: 'Can reach Google AI servers',
+      httpStatus: response.status
     });
   } catch (err) {
-    res.status(500).json({ 
-      status: 'error', 
-      message: 'Cannot reach Google AI servers', 
-      error: err.message 
+    res.status(500).json({
+      status: 'error',
+      message: 'Cannot reach Google AI servers',
+      error: err.message
     });
   }
 });
@@ -78,7 +78,7 @@ const connectDB = async () => {
       return;
     } catch (err) {
       console.error('❌ MongoDB Atlas Connection Error:', err.message);
-      
+
       try {
         const { stdout } = await execPromise('curl -s https://api.ipify.org');
         console.log(`\n💡 DIAGNOSTIC: Your current public IP is: ${stdout.trim()}`);
@@ -87,7 +87,7 @@ const connectDB = async () => {
       } catch (ipErr) {
         // Fallback if curl fails
       }
-      
+
       console.log('🔄 Attempting fallback to Local Memory Server...');
     }
   }
@@ -114,9 +114,13 @@ const connectDB = async () => {
 connectDB();
 
 // Start Server
-app.listen(PORT, '127.0.0.1', () => {
-  console.log(`🚀 Server active on http://127.0.0.1:${PORT}`);
-  console.log(`📡 API endpoints at http://127.0.0.1:${PORT}/api`);
+// app.listen(PORT, '127.0.0.1', () => {
+//   console.log(`🚀 Server active on http://127.0.0.1:${PORT}`);
+//   console.log(`📡 API endpoints at http://127.0.0.1:${PORT}/api`);
+// });
+
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server active on port ${PORT}`);
 });
 
 // Catch-all for undefined routes - Always return JSON
