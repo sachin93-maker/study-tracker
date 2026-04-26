@@ -182,7 +182,7 @@ const Welcome = () => {
             <img
               alt="Dashboard Preview"
               className="w-full h-auto max-h-[500px] object-contain rounded-lg opacity-80"
-              src="/dashboard-preview.png"
+              src="/dash.png"
             />
           </div>
         </div>
