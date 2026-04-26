@@ -144,7 +144,7 @@ const execPromise = util.promisify(exec);
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const path = require('path'); // Added path module
+const path = require('path');
 require('dotenv').config();
 
 const authRoutes = require('./routes/auth');
@@ -158,9 +158,11 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// 1. Serve the static files from the React app build (from your Dockerfile)
-// Since your Dockerfile copies to /app/frontend/dist, we use that path.
-app.use(express.static(path.join(__dirname, 'frontend/dist')));
+// Define the path to your frontend build folder
+const frontendPath = path.join(__dirname, 'frontend/dist');
+
+// 1. Serve the static files (CSS, JS, Images)
+app.use(express.static(frontendPath));
 
 // Request logging middleware
 app.use((req, res, next) => {
@@ -168,7 +170,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// Routes
+// API Routes
 app.get('/api', (req, res) => {
   res.json({ message: "Study Tracker API Root", version: "1.0.0" });
 });
@@ -237,11 +239,15 @@ const connectDB = async () => {
 
 connectDB();
 
-// 2. The Catch-all handler
-// This MUST be after all API routes. It sends the index.html for any 
-// request that isn't an API call, allowing React to handle its own routes.
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'frontend/dist', 'index.html'));
+// 2. The Catch-all handler (Updated to fix PathError)
+// This captures all non-API routes and serves the React index.html.
+// The syntax (.*) or :any* is required for newer Express/path-to-regexp versions.
+app.get('*', (req, res, next) => {
+  // If the request is for an API route that doesn't exist, don't serve the HTML
+  if (req.url.startsWith('/api')) {
+    return next();
+  }
+  res.sendFile(path.join(frontendPath, 'index.html'));
 });
 
 // Start Server
