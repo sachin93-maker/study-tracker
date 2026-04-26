@@ -3,7 +3,7 @@
 # ================================
 #  1️⃣ Build stage – compile the React frontend
 # ================================
-FROM node:20-alpine AS builder
+FROM node:20-slim AS builder
 WORKDIR /app
 
 # Install frontend dependencies
@@ -17,7 +17,7 @@ RUN npm run build   # creates ./dist
 # ================================
 #  2️⃣ Runtime stage – backend (Express) + static assets
 # ================================
-FROM node:20-alpine
+FROM node:20-slim
 WORKDIR /app
 
 # Install only production dependencies for the backend
