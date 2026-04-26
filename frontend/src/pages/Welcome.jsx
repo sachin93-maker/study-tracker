@@ -181,7 +181,7 @@ const Welcome = () => {
             <img
               alt="Dashboard Preview"
               className="w-full h-full object-cover rounded-lg opacity-80"
-              src={dashboardImg}
+              src="/dash.png"
             />
           </div>
         </div>
