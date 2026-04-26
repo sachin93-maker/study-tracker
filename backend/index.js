@@ -242,11 +242,9 @@ connectDB();
 // 2. The Catch-all handler (Updated to fix PathError)
 // This captures all non-API routes and serves the React index.html.
 // The syntax (.*) or :any* is required for newer Express/path-to-regexp versions.
-app.get('*', (req, res, next) => {
-  // If the request is for an API route that doesn't exist, don't serve the HTML
-  if (req.url.startsWith('/api')) {
-    return next();
-  }
+// 2. The Catch-all handler (Regex version to fix PathError)
+// Using a regex /.*/ instead of a string '*' avoids the path-to-regexp crash
+app.get(/^(?!\/api).+/, (req, res) => {
   res.sendFile(path.join(frontendPath, 'index.html'));
 });
 
