@@ -177,12 +177,11 @@ const Welcome = () => {
         {/* Background Element - Custom Image Section */}
         <div className="mt-12 sm:mt-20 w-full relative">
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent z-10"></div>
-          <div className="rounded-xl overflow-hidden glass-card p-2 border border-white/5">
-            {/* REPLACE THE SRC BELOW WITH YOUR IMAGE PATH */}
+          <div className="rounded-xl overflow-hidden glass-card p-2 border border-white/5 h-[400px]">
             <img
               alt="Dashboard Preview"
-              className="w-full h-auto max-h-[500px] object-contain rounded-lg opacity-80"
-              src="/dash.png"
+              className="w-full h-full object-cover rounded-lg opacity-80"
+              src={dashboardImg}
             />
           </div>
         </div>
